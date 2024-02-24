@@ -23,14 +23,18 @@ const LeftPage = () => {
     "Git" ,
     "NodeJs",
     "Framer Motion",
-
   ]
+
+  const controls = useAnimation()
 
   async function senndata( params ) {
 
   }
   return (
-    <div className=" hidden md:block bg-[#1c1c1c] w-full md:w-80 h-fit sticky top-5">
+    <motion.div 
+    initial={{y:10 , opacity:0}}
+    animate={{ y : 0 ,opacity : 1 ,  transition:{duration : 0.3,  type:"spring" ,stiffness: 200}}}
+    className=" hidden md:block bg-[#1c1c1c] w-full md:w-80 h-fit sticky top-5">
         <div className="md:w-80 w-full p-3 border border-neutral-800 rounded-2xl h-full bg-[#1c1c1c]">
             <div className="flex">
 
@@ -65,7 +69,7 @@ const LeftPage = () => {
                     <div className="flex gap-x-1 text-xs my-4">                       
 
                         {skills.map((skill ,index ) => (
-                         <p className="bg-[#282828] text-neutral-300 rounded-md px-2 h-5 flex items-center justify-center text-[11px] font-RubikBold" key={index}>
+                         <p className="bg-[#282828] text-neutral-300 rounded-md px-2 h-5 flex items-center justify-center text-[11px] font-RubikBold shrink-0" key={index}>
                            {skill}
                          </p> 
                         ))}
@@ -100,7 +104,7 @@ const LeftPage = () => {
 
 
          <motion.button 
-        // animate={controls} 
+         animate={controls} 
          className="bg-[#696969] h-full p-1 rounded-md text-xs w-20 font-RubikMeidum text-neutral-50">
             Suscribirse
          </motion.button>
@@ -168,7 +172,7 @@ const LeftPage = () => {
 
         </div>
       </div>
-    </div>  
+    </motion.div>  
   )
 }
 
