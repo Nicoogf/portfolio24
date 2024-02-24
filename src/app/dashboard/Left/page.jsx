@@ -6,7 +6,7 @@ import {
     PiGoogleLogoThin,
     PiTwitterLogoLight,
     PiMagicWandThin,
-    PiShapesThis,
+    PiShapesThin,
     PiHouseLight
 } from "react-icons/pi";
 import { SiAdobe} from "react-icons/si"
@@ -90,17 +90,83 @@ const LeftPage = () => {
            </div>   
         </div>
         <form action="senddata" className="bg-[#282828] p-1 rounded-md md:flex items-center justify-between h-9 w-full hidden">
-            <input  value={email} onChange={handleChange} className="w-36 focus:outline-none bg-transparent text-neutral-400 text-xs
-            placeholver:text-neutral-600 h-full pl-2 placeholder:text-xs placeholder:font-RubiMedium" placeholder="nombre@email.com" type="text" />
+            <input  
+            value={email} 
+            //onChange={handleChange} 
+            className="w-36 focus:outline-none bg-transparent text-neutral-400 text-xs
+            placeholver:text-neutral-600 h-full pl-2 placeholder:text-xs placeholder:font-RubiMedium" 
+            placeholder="nombre@email.com" 
+            type="text" />
 
 
          <motion.button 
         // animate={controls} 
          className="bg-[#696969] h-full p-1 rounded-md text-xs w-20 font-RubikMeidum text-neutral-50">
-
+            Suscribirse
          </motion.button>
-
         </form>
+
+        <div className="w-full mt-5 text-neutral-300">
+            <h2 className="font-RubikBold my-4">
+                Bio
+            </h2>
+            <p className="text-[12px] font-RubikRegular my-3">
+                El mundo digital del diseño y desarrollo en constante evolucion  con experciencia de 3 años 
+            </p>
+            <div className="mt-6 flex justify-between text-sm">
+                <div className="flex items-center gap-x-1">
+                    <PiShapesThin />
+                    <span className="text-xs font-RubikRegular">
+                            3 Años de experiencia en desarrollo
+                    </span>
+                </div>
+                <div className="flex items-center gap-x-1">
+                    <PiMagicWandThin />
+                    <span className="text-xs font-RubiRegular">
+                       24 Projects
+                    </span>
+                </div>
+            </div>
+
+            <div className="border border-[#282828] text-neutral-300 my-6">
+                    <div className="my-4">
+                        <h2 className="font-RubikRegular"> 
+                            Experiencia Laboral
+                        </h2>
+                        <div className="mt-7 flex justify-between">
+                            <div className="flex gap-x-3">
+                                <PiGoogleLogoThin className="text-xl"/>
+                                <div className="-mt-1">
+                                    <h3 className="text-sm font-RubikMedium">
+                                        Mid Developer
+                                    </h3>
+                                    <p className="text-[9px]">
+                                        Google
+                                    </p>                                    
+                                </div>
+                            </div>
+                            <small className="text-[9px] text-neutral-300">
+                                Febrero 2024 - Current
+                            </small>
+                        </div>
+                        <div className="my-3 flex justify-between">
+                            <div className="flex gap-x-3">
+                                <SiAdobe className=""/>
+                                <div className="-mt-1">
+                                    <h3 className="text-sm font-RubikMedium">
+                                        Jr diseñador
+                                    </h3>
+                                    <p className="text-[9px]">Adobe</p>
+                                </div>
+                            </div>
+                            <small className="text-[9px] text-neutral-300">
+                                Sep 2019 - January 2020
+                            </small>
+                        </div>
+                    </div>
+            </div>
+
+        </div>
       </div>
     </div>  
   )
