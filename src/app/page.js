@@ -32,7 +32,7 @@ export default function Home() {
 
       <div className="flex justify-center">
         <div className="fixed bottom-7 flex border border-neutral-600 rounded-lg p-2 gap-x-5 text-neutral-500">
-          <Link href={"/dashboard"}>
+          <Link href="/dashboard">
             <span>
               <PiHouseLight />
             </span>

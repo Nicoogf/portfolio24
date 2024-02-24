@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import View from "@/app/ui/dashboard/View/page"
-import LeftPage from "./Left/pag";
+import LeftPage from "./Left/page";
 
 export default function RootLayout({ children }) {
   return (
