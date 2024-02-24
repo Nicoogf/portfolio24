@@ -26,9 +26,33 @@ const LeftPage = () => {
   ]
 
   const controls = useAnimation()
+  const handleChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
   async function senndata( params ) {
 
+  }
+
+  const handleSubmit =async(e)=> {
+    e.prevemtDefault()
+    if(isValidEmail(email)){
+        setEmail("")
+    }else{
+        controls.start({
+            x:0,
+            transition: {
+                type:"spring" , 
+                velocity:"600" ,
+                stiffness:"5000" , 
+                damping: 15
+            }
+        })
+    }
   }
   return (
     <motion.div 
@@ -93,10 +117,12 @@ const LeftPage = () => {
              </div>
            </div>   
         </div>
-        <form action="senddata" className="bg-[#282828] p-1 rounded-md md:flex items-center justify-between h-9 w-full hidden">
+        <form 
+        onSubmit={handleSubmit}
+        className="bg-[#282828] p-1 rounded-md md:flex items-center justify-between h-9 w-full hidden">
             <input  
             value={email} 
-            //onChange={handleChange} 
+            onChange={handleChange} 
             className="w-36 focus:outline-none bg-transparent text-neutral-400 text-xs
             placeholver:text-neutral-600 h-full pl-2 placeholder:text-xs placeholder:font-RubiMedium" 
             placeholder="nombre@email.com" 
