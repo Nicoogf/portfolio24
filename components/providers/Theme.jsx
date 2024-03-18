@@ -9,4 +9,4 @@ function Theming({ children }) {
     </ThemeProvider>
   );
 }
-export default Theming;
+export default Theming ;

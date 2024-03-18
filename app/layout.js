@@ -1,6 +1,6 @@
 import "./globals.css";
 import Theming from "@/components/providers/Theme";
-import Dashboard from "@/app/dashboard/layout";
+
 
 export default function RootLayout({ children }) {
   return (
